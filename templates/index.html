@@ -1,0 +1,21 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <link rel="stylesheet" href="{% static 'logpage.css'%}">
+    </head>
+    <body style="background-image:url('{% static 'img/loginimg.jpeg'%}')">
+    <div class="dev">
+        <h1>Welcome !!!</h1>            
+        <br>
+
+        <form method="POST" action="/login/">
+            {% csrf_token %}
+            <b>Username</b>:<input type=text name="username" placeholder="Enter username"><br>
+            <b>Password</b>:<input type="password" name="password" placeholder="Enter password"><br>
+            <input type="submit" value="Login">
+            <input type="reset" value="Clear">
+        </form>
+    </div>
+    </body>
+</html>
