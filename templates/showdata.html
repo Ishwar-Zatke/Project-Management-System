@@ -1,0 +1,53 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <style>
+            .something{
+                text-align: center;
+                padding: 10px;
+                font-size: 30;
+            }
+            .links{
+        text-align: center;
+        font-size: 30px;
+        padding: 100px;
+
+    }
+    #link{
+        padding-left: 60px;
+        padding-right: 60px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+        </style>
+        
+    </head>
+    <body style="background: greenyellow;">
+        <h1 style="margin-left:20px; padding:20px; text-align: center;">Student Data</h1>
+<br>
+<div class="something">
+
+
+{{Name}}<br>
+{{Address}}<br>
+{{Email}}<br>
+{{Mobile}}<br>
+{{Project_Type}}<br>
+{{Project_Name}}<br>
+{{Project_Code}}<br>
+{{Total_Fees}}<br>
+{{ModeOfPayment}}<br>
+{{DateofPayment}}<br>
+</div>
+<div class="links">
+
+
+<a href="/viewdata/" id="link">View all Data</a>
+
+<a href="/addData/" id="link">Add Another Student</a>
+</div>
+    </body>
+</html>
+

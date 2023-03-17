@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    {% load static %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'viewdata.css'%}">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  
+<h1>Student Data</h1>
+<br>
+
+  <form action="/searchEmp/" method="GET">
+    <input type="text" name="q" class="search" placeholder="Search By Name">
+    <input type="submit" name="submit" class="submit">
+  </form>
+    <form action="/searchEmp/" method="GET">
+      <select type="text" name="r" class="search" >
+        <option value="UG">UG</option>
+        <option value="PG">PG</option>
+        <option value="PhD">PhD</option>    
+        <option value="Industrial">Industrial</option>
+      <input type="submit" name="submit" class="submit"></form>
+
+<table id="customers" class="table table-dark table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th> 
+        <th>Email</th>
+        <th>Mobile</th>             
+        <th>Project type</th>
+        <th>Project name</th>
+        <th>Project code</th>
+        <th>Total Fees</th>
+        <th>Payment Mode</th>
+        <th>Date Of Payment</th>
+        <th>Action</th>
+        
+        <th></th>
+    </tr>
+<tr>
+    {% for d in data %}
+    <td>{{d.id}}</td>
+    <td>{{d.student_name}}</td>
+    <td>{{d.student_address}}</td>
+    <td>{{d.student_email}}</td>
+    <td>{{d.student_mobile}}</td>
+    <td>{{d.student_project_type}}</td>
+    <td>{{d.student_project_name}}</td>
+    <td>{{d.student_project_code}}</td> 
+    <td>{{d.student_project_fees}}</td>
+    <td>{{d.student_project_payment_mode}}</td>
+    <td>{{d.student_date_of_payment}}</td>
+    <td><a href="/Updata/{{d.id}}">Edit</a>
+      <a href="/Deldata/{{d.id}}">Delete</a>
+    </td>
+
+</tr>   
+{% endfor %}
+</table>    
+</body>
+</html>

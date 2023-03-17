@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Todo Items</title>
+</head>
+<style>
+    
+    h3{
+        /* text-align: center; */
+
+    }
+    .container{
+        align-items: center;
+        /* text-align: center; */
+        align-content: center;
+    }
+
+    .tableform{
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        align-self: center;
+
+    }
+
+    
+
+
+</style>
+<body>
+    <div class="container">
+        <h3>Update Item</h3>
+        <p><a href="/viewdata/" style="font-size: 35; padding: 10px;">All Items</a></p>
+        
+        <div class="tableform">
+        <form method="POST" action="/Updata/{{obj5.id}}/">
+            {% csrf_token %}
+            <table cellpadding="5" cellspacing="3">
+                {{form.as_table}}
+                <tr>
+                    <td colspan="2">
+                        <button>Submit</button> 
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>    </div>
+</body>
+</html>

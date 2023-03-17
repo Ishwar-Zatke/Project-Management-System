@@ -1,0 +1,50 @@
+<head>
+  {% load static %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <link rel="stylesheet" href="{% static 'menupage.css'%}" />
+</head>
+
+<body style="background-image: url('{% static 'img/menuimg.jpeg'%}')">
+  <div class="devk">
+    <form action="/studentdata/" method="POST">
+      {% csrf_token %}
+      <h1>Add New Student</h1>
+      Student Name :<input type="text" name="name" /><br />
+      Student Address:<input type="text" name="address" /><br />
+      Student Email Id:<input type="email" name="email" /><br />
+      Student Mobile:<input type="number" name="mobile" /><br />
+
+      <div class="dbms">
+        Project Type:<select name="projecttype">
+          <option value="UG">UG</option>
+          <option value="PG">PG</option>
+          <option value="PhD">PhD</option>
+          <option value="Industrial">Industrial</option>
+        </select>
+      </div>
+      Project Name:<input
+        type="text"
+        name="projectname"
+        placeholder="Enter Project Name"
+      /><br />
+      Project Code:<input
+        type="number"
+        name="projectcode"
+        placeholder="Enter Project Code"
+      /><br />
+      Total Fees:<input
+        type="number"
+        name="totalfees"
+        placeholder="Enter Total Fees"
+      /><br />
+      Mode of Payment:<input
+        type="text"
+        name="ModeOfPayment"
+        placeholder="Enter Mode of Payment"
+      /><br />
+      Date of Payment:<input type="Date" name="DateofPayment" /><br />
+      <br />
+      <input type="Submit" value="Save" />
+    </form>
+  </div>
+</body>
